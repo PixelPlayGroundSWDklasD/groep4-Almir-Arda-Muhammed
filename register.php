@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="A.Ilhan">
+    <meta name="author" content="Almir Maksuti">
     <meta name="keywords" content="">
     <title>PixelPlayGround</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -37,29 +37,24 @@
                 <div class="bx bx-menu" id="menu-icon"></div>
             </div>
         </header>
-
-        <section class="home">
-            <div class="home-text">
-                <span>Gaming Club 2.0 Release</span>
-                <h1>Play games everyday <br> Become a legend</h1>
-                <p>No matter where you are, with a growing library of experience there is no limit.</p>
-
-                <div class="icons">
-                    <a href="#"><i class="ri-windows-fill"></i></a>
-                    <a href="#"><i class="ri-apple-fill"></i></a>
-                    <a href="#"><i class="ri-playstation-fill"></i></a>
-                    <a href="#"><i class="ri-xbox-fill"></i></a>
-                </div>
-                <div class="main-btnn">
-                    <a href="register.php" class="btn">Join Gaming!</a>
-                    <a href="games.php" class="btn22">See all games</a>
-                </div>
-            </div>
-
-            <div class="home-img">
-                <img src="img/Princess-Peach.png">
-            </div>
-        </section>
+        <div class="wrapper">
+    <form action="">
+      <h1>Register</h1>
+      <div class="input-box">
+        <input type="text" placeholder="Username" required>
+        <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Password" required>
+        <i class='bx bxs-lock-alt' ></i>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Confirm Password" required>
+        <i class='bx bxs-lock-alt' ></i>
+      </div>
+      <button type="submit" class="btn">Register</button>
+    </form>
+  </div>
 
         <footer>
             <div class="footerContainer">
