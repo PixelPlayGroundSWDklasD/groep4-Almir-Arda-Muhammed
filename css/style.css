@@ -379,9 +379,9 @@ section {
     color: #fff;
     border-radius: 12px;
     padding: 30px 40px;
-    margin-left: 1070px;
-    margin-top: 500px;
-    margin-bottom: 220px;
+    margin: 0 auto;
+    margin-top: 350px;
+    margin-bottom: 125px;
   }
   .wrapper h1{
     font-size: 36px;

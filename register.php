@@ -27,7 +27,7 @@
             </a>
 
             <ul class="navlist">
-                <li><a href="login.php">Log in</a></li>
+                <li><a href="login.html">Log in</a></li>
                 <li><a href="#">Games</a></li>
                 <li><a href="#">Profile</a></li>
             </ul>
