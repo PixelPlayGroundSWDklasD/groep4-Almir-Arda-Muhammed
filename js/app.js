@@ -49,3 +49,18 @@ function myMenuFunction() {
         x.style.opacity = 0;
         y.style.opacity = 1;
     }
+
+    document.getElementById('toggle-password').addEventListener('change', function() {
+        const passwordFields = [
+            document.getElementById('ww'),
+            document.getElementById('ww-h')
+        ];
+
+        passwordFields.forEach(field => {
+            if (this.checked) {
+                field.type = 'text';
+            } else {
+                field.type = 'password';
+            }
+        });
+    });

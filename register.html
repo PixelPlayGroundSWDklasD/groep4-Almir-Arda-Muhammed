@@ -33,38 +33,44 @@
             </ul>
 
             <div class="h-right">
-                <a href="register.php">Register</a>
+                <a href="register.html">Register</a>
                 <div class="bx bx-menu" id="menu-icon"></div>
             </div>
         </header>
+        <main>
         <div class="wrapper">
             <h4>Registreren</h4>
             <form action="lib/connection.php" method="POST">
                 <table>
                     <div class="input-box">
-                        <input type="username" placeholder="Gebruikersnaam" name ="userid"> 
-                        <i class='bx bxs-user'></i> 
+                        <input type="text" placeholder="Gebruikersnaam" name="userid">
+                        <i class='bx bxs-user'></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" placeholder="Wachtwoord" name="wachtwoord">
+                        <input type="password" placeholder="Wachtwoord" name="wachtwoord" id="ww">
                         <i class='bx bxs-lock-alt'></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" placeholder="Wachtwoord herhalen" name="wachtwoord_conf">
+                        <input type="password" placeholder="Wachtwoord herhalen" name="wachtwoord_conf" id="ww-h">
                         <i class='bx bxs-lock-alt'></i>
                     </div>
                     <div class="input-box">
                         <input type="text" placeholder="Geheime vraag" name="geheimevraag">
                     </div>
                     <div class="input-box">
-                        <input type="text" placeholder="Antwoord vraag" name="ant_geh_vraag">
+                        <input type="password" placeholder="Antwoord vraag" name="ant_geh_vraag">
+                    </div>
+                    <div class="input-box">
+                        <input type="checkbox" id="toggle-password">
+                        <label for="toggle-password">Wachtwoord tonen</label>
                     </div>
                     <div>
-                       <input type="submit" value="Registreren" name="verzenden" class="btn">
+                        <input type="submit" value="Registreren" name="verzenden" class="btn">
                     </div>
                 </table>
             </form>
         </div>
+    </main>
 
         <footer>
             <div class="footerContainer">
