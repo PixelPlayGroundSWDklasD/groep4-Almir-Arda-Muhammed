@@ -21,22 +21,9 @@
     </head>
     <body>
 
-        <header>
-            <a href="index.html" class="logo">
-                <img src="img/nova-high-resolution-logo-transparent.png"  width="100px" height="100px">   
-            </a>
-
-            <ul class="navlist">
-                <li><a href="login.html">Log in</a></li>
-                <li><a href="#">Games</a></li>
-                <li><a href="#">Profile</a></li>
-            </ul>
-
-            <div class="h-right">
-                <a href="register.html">Register</a>
-                <div class="bx bx-menu" id="menu-icon"></div>
-            </div>
-        </header>
+      <?php
+      include 'header.php';
+      ?>
        <main>
        
         <div class="wrapper">
@@ -56,25 +43,14 @@
       </div>
       <button type="submit" class="btn">Login</button>
       <div class="register-link">
-        <p>Dont have an account? <a href="#">Register</a></p>
+        <p>Dont have an account? <a href="register.html">Register</a></p>
       </div>
     </form>
   </div>
 </main>
-        <footer>
-            <div class="footerContainer">
-                <div class="socialIcons">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-google-plus"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="footerBottom">
-                <p>Copyright &copy;2024; Designed by <span class="designer">Nova</span></p>
-            </div>
-        </footer>
+        <?php
+        include 'footer.php';
+        ?>
 
     <script src="https://unpkg.com/scrollreveal"></script>    
 

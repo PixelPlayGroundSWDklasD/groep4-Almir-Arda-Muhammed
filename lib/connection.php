@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "pixxel";
+$username = "pixell";
 $password = "1234567";
-$database = "pixelplayground1";
+$database = "pixelplaygroundd";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
@@ -19,10 +19,10 @@ if (isset($_POST['verzenden'])) {
   $antw_vraag = $_POST['ant_geh_vraag'];
 }
 
-$sql = "INSERT INTO gebruikers (id, gebruikersnaam, wachtwoord, geheimevraag, antw_vraag) VALUES (NULL, '$userid', '$wachtwoord', '$geheimevraag', '$antw_vraag')";
+$sql = "INSERT INTO gebruikerss (id, gebruikers, wachtwoord, geheimevraag, antw_vraag) VALUES (NULL, '$userid', '$wachtwoord', '$geheimevraag', '$antw_vraag')";
 
 if ($conn->query($sql) === TRUE) {
-  echo "New record created succesfully";
+  echo "New user created succesfully";
   echo "Welkom $userid";
 } else {
   echo "Error: " . $sql . "<br>"  . $conn->error;

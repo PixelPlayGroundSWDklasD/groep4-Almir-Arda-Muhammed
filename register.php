@@ -21,26 +21,13 @@
     </head>
     <body>
 
-        <header>
-            <a href="index.html" class="logo">
-                <img src="img/nova-high-resolution-logo-transparent.png"  width="100px" height="100px">   
-            </a>
-
-            <ul class="navlist">
-                <li><a href="login.html">Log in</a></li>
-                <li><a href="#">Games</a></li>
-                <li><a href="#">Profile</a></li>
-            </ul>
-
-            <div class="h-right">
-                <a href="register.html">Register</a>
-                <div class="bx bx-menu" id="menu-icon"></div>
-            </div>
-        </header>
+    <?php
+    include 'header.php';
+    ?>
         <main>
         <div class="wrapper">
-            <h4>Registreren</h4>
             <form action="lib/connection.php" method="POST">
+                <h1>Registreren</h1>
                 <table>
                     <div class="input-box">
                         <input type="text" placeholder="Gebruikersnaam" name="userid">
@@ -56,11 +43,13 @@
                     </div>
                     <div class="input-box">
                         <input type="text" placeholder="Geheime vraag" name="geheimevraag">
+                        <i class="ri-questionnaire-line"></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" placeholder="Antwoord vraag" name="ant_geh_vraag">
+                        <input type="text" placeholder="Antwoord vraag" name="ant_geh_vraag">
+                        <i class="ri-question-answer-line"></i>
                     </div>
-                    <div class="input-box">
+                    <div>
                         <input type="checkbox" id="toggle-password">
                         <label for="toggle-password">Wachtwoord tonen</label>
                     </div>
@@ -72,20 +61,9 @@
         </div>
     </main>
 
-        <footer>
-            <div class="footerContainer">
-                <div class="socialIcons">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-google-plus"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="footerBottom">
-                <p>Copyright &copy;2024; Designed by <span class="designer">Nova</span></p>
-            </div>
-        </footer>
+        <?php
+        include 'footer.php';
+        ?>
 
     <script src="https://unpkg.com/scrollreveal"></script>    
 
