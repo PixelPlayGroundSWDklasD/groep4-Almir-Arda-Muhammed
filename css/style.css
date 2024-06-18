@@ -327,7 +327,6 @@ section {
     opacity: 0,9;
 }
 
-/* Hover affect on social media icon */
 
 .socialIcons a:hover{
     background-color: #4c1432;
@@ -466,3 +465,12 @@ section {
     text-decoration: underline;
   }
 
+  .centered-box {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    border: 3px solid cyan;
+    border-radius: 50px;
+    background-color: transparent;
+}
