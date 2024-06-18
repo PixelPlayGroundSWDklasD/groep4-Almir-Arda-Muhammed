@@ -10,8 +10,18 @@
  
     <ul class="navlist">
         <li><a href="login.php">Log in</a></li>
+<<<<<<< Updated upstream
         <li><a href="#">Games</a></li>
         <li><a href="profile.php">Profile</a></li>
+=======
+<<<<<<< HEAD
+        <li><a href="games.php">Games</a></li>
+        <li><a href="#">Profile</a></li>
+=======
+        <li><a href="#">Games</a></li>
+        <li><a href="profile.php">Profile</a></li>
+>>>>>>> 65debe7f5acac7c2dc903470c33822398944964a
+>>>>>>> Stashed changes
     </ul>
  
     <div class="h-right">

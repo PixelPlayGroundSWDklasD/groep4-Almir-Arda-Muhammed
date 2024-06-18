@@ -54,8 +54,8 @@
                     <a href="#"><i class="ri-xbox-fill"></i></a>
                 </div>
                 <div class="main-btnn">
-                    <a href="register.html" class="btn">Join Gaming!</a>
-                    <a href="games.php" class="btn22">S ee all games</a>
+                    <a href="register.php   " class="btn">Join Gaming!</a>
+                    <a href="games.php" class="btn22">See all games</a>
                 </div>
             </div>
 
