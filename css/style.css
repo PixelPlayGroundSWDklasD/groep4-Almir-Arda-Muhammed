@@ -465,4 +465,115 @@ section {
   .register-link p a:hover{
     text-decoration: underline;
   }
+ 
+ 
+/* Reset standaard stijlen en basisopmaak */
 
+
+
+
+.quizgame-container {
+    max-width: 800px;
+    margin: 20px;
+    padding: 30px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.quizgame-question {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.quizgame-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.quizgame-options button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.quizgame-options button:hover {
+    background-color: #0056b3;
+}
+
+.quizgame-result {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.quizgame-scores-title {
+    margin-top: 30px;
+    font-size: 20px;
+    color: black;
+}
+
+.quizgame-saved-scores {
+    list-style-type: none;
+    padding: 0;
+}
+
+.quizgame-saved-scores li {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.quizgame-open-confirmation {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quizgame-open-confirmation:hover {
+    background-color: #218838;
+}
+
+.quizgame-confirmation-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 1px solid #333;
+    z-index: 1000;
+}
+
+.buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #c82333;
+}
+
+.quizgame-message {
+    color: #0f151a;
+}
