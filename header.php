@@ -12,9 +12,6 @@
         <li><a href="login.php">Log in</a></li>
         <li><a href="games.php">Games</a></li>
         <li><a href="profile.php">Profile</a></li>
-
- 
-
     </ul>
  
     <div class="h-right">

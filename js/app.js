@@ -11,7 +11,7 @@ const sr = ScrollReveal ({
     duration: 2550,
     reset: true
 });
-
+sr.reveal('.centerd-box',{delay:300, origin: 'top'});
 sr.reveal('.home-text span',{delay:300});
 sr.reveal('.home-text h1',{delay:400, origin: 'left'});
 sr.reveal('.home-text p',{delay:510, origin: 'left'});

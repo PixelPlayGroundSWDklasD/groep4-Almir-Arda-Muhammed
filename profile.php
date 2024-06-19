@@ -17,7 +17,7 @@
         .mo-1-main-container-profile {
             max-width: 900px;
             margin: 20px auto;
-            background-color: black;
+            background-color: transparent;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -135,6 +135,16 @@
             font-size: 18px;
             color: #666;
         }
+
+        .btn-3{
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #00ecff;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 15px;
+            
+        }
     </style>
 </head>
 <body>
@@ -217,10 +227,10 @@
                 <?php endforeach; ?>
             </ul>
         </section>
-
+        
         <!-- Include friends.php voor vriendenbeheer -->
         <?php include 'friends.php'; ?>
-
+        <a href="logout.php" class="btn-3">Logout</a>
     </main>
     <?php
     include 'footer.php';

@@ -25,7 +25,7 @@
         .mo-1-main-container-friends {
             max-width: 900px;
             margin: 20px auto;
-            background-color: black;
+            background-color: transparent;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
