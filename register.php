@@ -1,3 +1,4 @@
+<?php include 'lib/connection.php';?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -28,7 +29,7 @@
                 $wachtwoord = $_POST['wachtwoord'];
                 $wachtwoord_conf = $_POST['wachtwoord_conf'];
                 $geheimevraag = $_POST['geheimevraag'];
-                $ant_geh_vraag = $_POST['ant_geh_vraag'];
+                $antw_vraag = $_POST['antw_vraag'];
 
                 if ($wachtwoord !== $wachtwoord_conf) {
                     $errorMessage = 'Wachtwoorden komen niet overeen.';
@@ -37,9 +38,19 @@
                 }
             }
             ?>
-            <?php if ($registrationSuccessful): ?>
+            <?php if ($registrationSuccessful): 
+                
+                $sql = "INSERT INTO gebruikerss (id, gebruikers, wachtwoord, geheimevraag, antw_vraag) VALUES (NULL, '$userid', '$wachtwoord', '$geheimevraag', '$antw_vraag')";
+
+  if ($conn->query($sql) === TRUE) {
+    echo "New user created successfully<br>";
+  } else {
+    echo "Error: " . $sql . "<br>"  . $conn->error;
+  }
+  ?>
+
                 <div id="welcome-message" style="color: cyan;">
-                    Welkom, <?php echo htmlspecialchars($userid); ?>!
+                    Welcome, <?php echo htmlspecialchars($userid); ?>!
                 </div>
             <?php else: ?>
                 <form id="registration-form" action="" method="POST">
@@ -62,7 +73,7 @@
                             <i class="ri-questionnaire-line"></i>
                         </div>
                         <div class="input-box">
-                            <input type="text" placeholder="Antwoord vraag" name="ant_geh_vraag" required>
+                            <input type="text" placeholder="Antwoord vraag" name="antw_vraag" required>
                             <i class="ri-question-answer-line"></i>
                         </div>
                         <div>

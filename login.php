@@ -1,3 +1,4 @@
+<?php include 'lib/connection.php';?>
 <html lang="nl">
 
 <head>
@@ -24,7 +25,7 @@
        <main>
        
         <div class="wrapper">
-    <form action="">
+    <form action="login.php" method = "POST">
       <h1>Login</h1>
       <div class="input-box">
         <input type="text" placeholder="Username" required>
@@ -58,20 +59,6 @@
 </html>
 <?php
 session_start(); 
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "pixelplaygroundd";
-
-
-$conn = new mysqli($servername, $username, $password, $database);
-
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 $errorMessage = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -95,5 +82,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$conn->close();
 ?>
