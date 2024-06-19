@@ -9,7 +9,7 @@
     <meta name="description" content="Choose your favorite games">
     <meta name="author" content="A.Ilhan">
     <meta name="keywords" content="games, templates, choose">
-    <title>Games - PixelPlayGround</title>
+    <title>Nova Gaming - Games</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>

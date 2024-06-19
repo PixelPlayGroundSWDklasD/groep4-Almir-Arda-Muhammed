@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Almir Maksuti">
     <meta name="keywords" content="">
-    <title>PixelPlayGround</title>
+    <title>Nova Gaming</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>

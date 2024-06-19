@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PixelPlayGround - Vrienden</title>
+    <title>Nova Gaming - Friends</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /* Algemene stijlen */
         
 
         .container {
@@ -21,7 +20,7 @@
             padding: 20px;
         }
 
-        /* Stijlen voor friends.php */
+        
         .mo-1-main-container-friends {
             max-width: 900px;
             margin: 20px auto;
@@ -52,7 +51,7 @@
         }
 
         .mo-4-friend h2 {
-            color: #000; /* Zwart maken */
+            color: #000; 
         }
 
         .mo-5-friend-highscores {
