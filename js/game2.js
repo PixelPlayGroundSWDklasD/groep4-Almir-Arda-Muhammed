@@ -29,7 +29,7 @@ const originalPlayers = [
     { name: "Almir Maksuti", country: "Kosovo", club: "SC Remo", position: "Midfielder" },
     { name: "Karim Benzema", country: "France", club: "Al-Itihad", position: "Forward" },
     { name: "Ederson", country: "Brazil", club: "Manchester City", position: "Goalkeeper" },
-    { name: "Joshua Kimmich", country: "Germany", club: "Bayern Munich", position: "Midfielder" }
+    { name: "Joshua Kimmich", country: "Germany", club: "Bayern Munich", position: "Midfielder" },
     { name: "Frenkie de Jong", country: "Netherlands", club: "Barcelona", position: "Midfielder" },
     { name: "Joao Cancelo", country: "Portugal", club: "Barcelona", position: "Defender" },
     { name: "Jorginho", country: "Italy", club: "Arsenal", position: "Midfielder" },

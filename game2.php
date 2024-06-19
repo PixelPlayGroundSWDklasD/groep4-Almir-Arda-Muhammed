@@ -10,11 +10,8 @@
             font-family: 'Arial', sans-serif;
             text-align: center;
             margin: 20px;
-            background-color: #f0f0f0;
-            background-image: url('img/footballers.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+            min-height: 100vh;
+          
         }
         h1 {
             color: #333;
@@ -23,12 +20,16 @@
             text-shadow: 1px 1px 2px #fff;
         }
         .container {
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
-            background-color: rgba(120, 200, 300, 0.8);
+            margin-top: 50px;
             padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border: 3px solid #f53fa1;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #00ecff;
+            margin-bottom: 50px;
+        
         }
         .input-container {
             margin-top: 20px;
@@ -46,8 +47,8 @@
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
+            background-color: #f53fa1;
+            color: #4c1432;
             border: none;
             border-radius: 25px;
             margin-top: 10px;
@@ -60,7 +61,7 @@
         .hint2, .result2, .score2 {
             font-size: 18px;
             margin-top: 10px;
-            color: #444;
+            color: #00ecff;
         }
         .result2 {
             font-weight: bold;
