@@ -40,7 +40,7 @@ const originalPlayers = [
     { name: "David Alaba", country: "Austria", club: "Real Madrid", position: "Defender" },
     { name: "Angel Di Maria", country: "Argentina", club: "Benfica", position: "Forward" },
     { name: "Leroy Sane", country: "Germany", club: "Bayern Munich", position: "Forward" },
-    { name: "Trent Alexander-Arnold", country: "England", club: "Liverpool", position: "Defender" },
+    { name: "Trent Alexander Arnold", country: "England", club: "Liverpool", position: "Defender" },
     { name: "Lucas Hernandez", country: "France", club: "Bayern Munich", position: "Defender" },
     { name: "Jack Grealish", country: "England", club: "Manchester City", position: "Forward" },
     { name: "Memphis Depay", country: "Netherlands", club: "Atletico Madrid", position: "Forward" },
@@ -54,7 +54,7 @@ const originalPlayers = [
     { name: "Erling Haaland", country: "Norway", club: "Manchester City", position: "Forward" },
     { name: "Pedri", country: "Spain", club: "Barcelona", position: "Midfielder" },
     { name: "Nicolo Barella", country: "Italy", club: "InterMilan", position: "Midfielder" },
-    { name: "Declan Rice", country: "England", club: "Arsenald", position: "Midfielder" },
+    { name: "Declan Rice", country: "England", club: "Arsenal", position: "Midfielder" },
     { name: "Serge Gnabry", country: "Germany", club: "Bayern Munich", position: "Forward"},
 ];
 

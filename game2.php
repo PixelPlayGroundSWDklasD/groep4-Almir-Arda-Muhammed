@@ -66,7 +66,7 @@
         }
         .result2 {
             font-weight: bold;
-            color: #333;
+            color: #45a049;
         }
         .score2 span {
             font-weight: bold;
