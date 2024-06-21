@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="A.Ilhan">
+    <meta name="author" content="Arda Ilhan">
     <meta name="keywords" content="">
     <title>Nova Gaming</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
