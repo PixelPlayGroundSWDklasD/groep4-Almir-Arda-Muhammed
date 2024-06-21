@@ -56,6 +56,7 @@ const originalPlayers = [
     { name: "Nicolo Barella", country: "Italy", club: "InterMilan", position: "Midfielder" },
     { name: "Declan Rice", country: "England", club: "Arsenal", position: "Midfielder" },
     { name: "Serge Gnabry", country: "Germany", club: "Bayern Munich", position: "Forward"},
+    { name: "Mo Bakar", country: "Kurdistan", club: "SC Remo", position: "Forward"},
 ];
 
 let players = [...originalPlayers];
