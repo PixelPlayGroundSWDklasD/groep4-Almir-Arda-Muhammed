@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Choose your favorite games">
-    <meta name="author" content="A.Ilhan">
+    <meta name="author" content="Arda Ilhan">
     <meta name="keywords" content="games, templates, choose">
     <title>Nova Gaming - Games</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
