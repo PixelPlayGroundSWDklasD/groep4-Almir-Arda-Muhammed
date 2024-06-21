@@ -18,7 +18,8 @@
 body {
     background: var(--bg-color);
     color: var(--text-color);
-    background-image: linear-gradient(to bottom right,rgba(23, 1, 151, 0.336), black, rgba(116, 3, 150, 0.336))
+    background-image: linear-gradient(to bottom right,rgba(23, 1, 151, 0.336), black, rgba(116, 3, 150, 0.336));
+    min-height: 100vh;
 }
 header{
     
@@ -586,4 +587,135 @@ section {
     border: 3px solid var(--main-color);
     border-radius: 50px;
     background-color: transparent;
+}
+
+.game2body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 20px;
+    min-height: 100vh;
+  
+}
+.game2h1 h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px #fff;
+}
+.game2container {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    border: 3px solid #f53fa1;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #00ecff;
+    margin-bottom: 50px;
+
+}
+.input-container {
+    margin-top: 20px;
+}
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    width: 70%;
+    margin-right: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f53fa1;
+    color: #4c1432;
+    border: none;
+    border-radius: 25px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+button:hover {
+    background-color: #45a049;
+}
+.result2, .score2 {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #00ecff;
+}
+.result2 {
+    font-weight: bold;
+    color: #45a049;
+}
+.score2 span {
+    font-weight: bold;
+}
+
+.hint2{
+    color:#45a049 
+}
+
+.games-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.game-template {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.game-template:hover {
+    transform: scale(1.05);
+}
+
+.game-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.game-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.game-description {
+    padding: 0 10px 20px;
+}
+
+.choose-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.choose-button:hover {
+    background-color: #0056b3;
+}
+
+.game-canvas {
+    display: none;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+}
+
+.show-canvas {
+    display: block;
 }

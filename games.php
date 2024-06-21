@@ -19,67 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-        .games-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
-        }
-
-        .game-template {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            overflow: hidden;
-            width: 300px;
-            margin: 20px;
-            text-align: center;
-            transition: transform 0.2s;
-        }
-
-        .game-template:hover {
-            transform: scale(1.05);
-        }
-
-        .game-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .game-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        .game-description {
-            padding: 0 10px 20px;
-        }
-
-        .choose-button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            margin-bottom: 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .choose-button:hover {
-            background-color: #0056b3;
-        }
-
-        .game-canvas {
-            display: none;
-            margin: 20px auto;
-            border: 1px solid #ddd;
-        }
-
-        .show-canvas {
-            display: block;
-        }
+      
     </style>
 </head>
 
@@ -104,7 +44,7 @@
             <img src="img/quiz.png" alt="General Knowledge" class="game-image">
             <h2 class="game-title">General Knowledge Quiz</h2>
             <p class="game-description">Test your smarts with our fun general knowledge quiz! Play solo or with friends. Join now and see how you score!</p>
-            <button class="choose-button" onclick="window.location.href = 'game3.php'">Go to General Knowledge Quizz</button>
+            <button class="choose-button" onclick="window.location.href = 'game3.php'">Go to General Knowledge Quiz</button>
         </div>
     </div>
     <br><br><br><br><br>  
