@@ -589,7 +589,6 @@ section {
     background-color: transparent;
 }
 
-<<<<<<< Updated upstream
 .game2body {
     font-family: 'Arial', sans-serif;
     text-align: center;
@@ -719,7 +718,7 @@ button:hover {
 
 .show-canvas {
     display: block;
-=======
+}
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -795,5 +794,271 @@ color: #fff;
     border: 3px solid #f53fa1;
     border-radius: 50px;
     background-color: transparent;
->>>>>>> Stashed changes
+}
+
+.mo_friend_profile-container {
+    padding-left: 842px;
+}
+
+.mo_friend_profile-badges-text- {
+    padding-left: 600px;
+}
+
+.mo_friend_profile-badges-text-2 {
+    padding-left: 620px;
+}
+
+.mo_friends-main-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border: 4px solid #f53fa1;
+}
+
+.mo_friends-page-title {
+    font-size: 36px;
+    color: #00ecff;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.mo_friends-friends-section {
+    margin-top: 40px;
+}
+
+.mo_friends-friend {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mo_friends-friend h2 {
+    color: #000;
+}
+
+.mo_friends-friend-highscores {
+    list-style: none;
+    padding: 0;
+}
+
+.mo_friends-friend-highscores h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.mo_friends-friend-highscores li {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.mo_friends-friend a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #3498db;
+    padding-right: 10px;
+    font-size: 16px;
+}
+
+.mo_friends-friend a:hover {
+    color: #2980b9;
+}
+
+.mo_friends-add-friend-section {
+    margin-top: 40px;
+}
+
+.mo_friends-add-friend-section h2 {
+    font-size: 24px;
+    color: white;
+}
+
+.mo_friends-add-friend-section form {
+    margin-top: 20px;
+}
+
+.mo_friends-add-friend-section label {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.mo_friends-add-friend-section input[type="text"] {
+    width: calc(100% - 120px);
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.mo_friends-add-friend-section .btn-3 {
+    background-color: #00ecff;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.mo_friends-add-friend-section .btn-3:hover {
+    background-color: white;
+}
+
+.mo-highscores_friend-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.mo-highscores_friend-title {
+    font-size: 24px;
+    color: #00ecff;
+}
+
+.mo-highscores_friend-game-scores {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mo-highscores_friend-subtitle {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.mo-highscores_friend-scores-list {
+    list-style: none;
+    padding: 0;
+}
+
+.mo-highscores_friend-score-item {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.mo-highscores_friend-no-score {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+
+#mo-profile-main-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border: 4px solid #f53fa1;
+}
+
+#mo-profile-page-title {
+    font-size: 36px;
+    color: #00ecff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#mo-profile-change-password-section,
+#mo-profile-change-username-section {
+    margin-top: 40px;
+}
+
+#mo-profile-change-password-section h2,
+#mo-profile-change-username-section h2 {
+    font-size: 28px;
+    color: #00ecff;
+    margin-bottom: 15px;
+}
+
+#mo-profile-change-password-section input,
+#mo-profile-change-username-section input {
+    width: calc(100% - 22px);
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+#mo-profile-change-password-section button,
+#mo-profile-change-username-section button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#mo-profile-change-password-section button:hover,
+#mo-profile-change-username-section button:hover {
+    background-color: #2980b9;
+}
+
+#mo-profile-badges-section {
+    margin-top: 40px;
+}
+
+#mo-profile-badges-section h2 {
+    font-size: 28px;
+    color: #00ecff;
+    margin-bottom: 20px;
+}
+
+.mo-profile-badges-list {
+    list-style: none;
+    padding: 0;
+}
+
+.mo-profile-badges-list li {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mo-profile-badges-list h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.mo-profile-badges-list p {
+    font-size: 18px;
+    color: #666;
+}
+
+.mo-profile-badges-list img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+}
+
+.btn-3 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00ecff;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 15px;
+
 }
