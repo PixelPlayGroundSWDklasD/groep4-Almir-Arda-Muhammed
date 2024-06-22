@@ -1,9 +1,39 @@
+<?php
+include 'lib/connection.php'; // Inclusief de databaseverbinding
+
+// Simulatie van ingelogde gebruiker (vervang dit door daadwerkelijke sessiecontrole)
+$user_id = 1; // Vervang dit door $_SESSION['user_id'] wanneer sessie actief is
+
+// Functie om vrienden op te halen
+function getFriends($conn, $user_id) {
+    $sql = "SELECT u.gebruikers, u.id
+            FROM gebruikerss AS u
+            INNER JOIN vrienden AS v ON u.id = v.vriend_id
+            WHERE v.gebruiker_id = $user_id";
+
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        return mysqli_fetch_all($result, MYSQLI_ASSOC);
+    } else {
+        return [];
+    }
+}
+
+// Haal de vrienden op van de ingelogde gebruiker
+$friends = getFriends($conn, $user_id);
+?>
+
 <!DOCTYPE html>
+
 <html lang="nl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nova Gaming - Friends</title>
+    <meta name="description" content="">
+    <meta name="author" content="Muhammed yesilkaya">
+    <meta name="keywords" content="">
+    <title>friends</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
@@ -11,128 +41,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        
-
+<style>
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-
-        
-        .mo-1-main-container-friends {
-            max-width: 900px;
-            margin: 20px auto;
-            background-color: transparent;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            
-        }
-
-        .mo-2-page-title-friends {
-            font-size: 36px;
-            color: #00ecff;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .mo-3-friends-section {
-            margin-top: 40px;
-        }
-
-        .mo-4-friend {
-            background-color: #f9f9f9;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .mo-4-friend h2 {
-            color: #000; 
-        }
-
-        .mo-5-friend-highscores {
-            list-style: none;
-            padding: 0;
-        }
-
-        .mo-5-friend-highscores h3 {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .mo-5-friend-highscores li {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        .mo-4-friend a {
-            display: inline-block;
-            margin-top: 10px;
-            text-decoration: none;
-            color: #3498db;
-            padding-right: 10px;
-            font-size: 16px;
-        }
-
-        .mo-4-friend a:hover {
-            color: #2980b9;
-        }
-
-        
     </style>
 </head>
 <body>
-    <?php
-    // Placeholder for session start
-    // session_start();
-    // Check if user is logged in, if not, redirect to login page
-    // if (!isset($_SESSION['user_id'])) {
-    //     header("Location: login.php");
-    //     exit();
-    // }
+    <main class="mo_friends-main-container">
+        <h1 class="mo_friends-page-title">Mijn Vrienden</h1>
 
-    // Simulated data
-    $friends = [
-        ['id' => 1, 'username' => 'Vriend1', 'highscores' => [100, 250, 500]],
-        ['id' => 2, 'username' => 'Vriend2', 'highscores' => [300, 600, 800]],
-        ['id' => 3, 'username' => 'Vriend3', 'highscores' => [150, 400, 700]]
-    ];
-
-   
-    ?>
-    <main class="mo-1-main-container-friends">
-        <h1 class="mo-2-page-title-friends">Mijn Vrienden</h1>
-        
-        <!-- Sectie met vrienden -->
-        <section class="mo-3-friends-section">
-            <?php foreach ($friends as $friend): ?>
-                <div class="mo-4-friend">
-                    <h2><?php echo $friend['username']; ?></h2>
-                    <ul class="mo-5-friend-highscores">
-                        <h3>Highscores</h3>
-                        <?php foreach ($friend['highscores'] as $score): ?>
-                            <li><?php echo $score; ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                    <a href="friend_profile.php?id=<?php echo $friend['id']; ?>">Bekijk profiel</a>
-                    <a href="#">Verwijder vriend</a>
-                </div>
-            <?php endforeach; ?>
+        <section class="mo_friends-friends-section">
+            <ul class="mo_friends-friends-list">
+                <?php foreach ($friends as $friend) : ?>
+                    <li class="mo_friends-friend">
+                        <h2><?php echo $friend['gebruikers']; ?></h2>
+                        <p>User ID: <?php echo $friend['id']; ?></p>
+                        <a href="friend_profile.php?id=<?php echo $friend['id']; ?>" class="btn-3">Bekijk Profiel</a>
+                        <a href="remove_friend.php?id=<?php echo $friend['id']; ?>" class="btn-3">Verwijder Vriend</a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
         </section>
 
-        
-        
+        <section class="mo_friends-add-friend-section">
+            <h2>Vrienden Toevoegen</h2>
+            <form action="add_friend.php" method="post">
+                <label for="search_username">Gebruikersnaam Zoeken:</label>
+                <input type="text" id="search_username" name="search_username" required>
+                <button type="submit" class="btn-3">Voeg Toe</button>
+            </form>
+        </section>
     </main>
-    <?php
-    
-    ?>
-    <script src="https://unpkg.com/scrollreveal"></script>    
-    <script src="js/app.js"></script>     
 </body>
 </html>
