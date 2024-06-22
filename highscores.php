@@ -1,88 +1,61 @@
+<?php
+include 'lib/connection.php';
+
+// Placeholder voor sessie start
+// session_start();
+
+// Simulatie van ingelogde gebruiker (vervang dit door daadwerkelijke sessiecontrole)
+$user_id = 1; // Vervang dit door $_SESSION['user_id'] wanneer sessie actief is
+
+$sql = "SELECT highscore
+        FROM Highscores
+        WHERE gebruiker_id = $user_id
+        ORDER BY highscore DESC
+        LIMIT 5";
+
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    $highscores = mysqli_fetch_all($result, MYSQLI_ASSOC);
+} else {
+    $highscores = [];
+}
+?>
+
 <!DOCTYPE html>
+
 <html lang="nl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nova Gaming - Highscores</title>
+    <meta name="description" content="">
+    <meta name="author" content="Muhammed yesilkaya">
+    <meta name="keywords" content="">
+    <title>highscores</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
-    <link rel="stylesheet" type="text/css" href="css/highscores.css">
-    <style>
-        /* Stijlen voor highscores.php */
-        .mo-1-main-container-highscores {
-            max-width: 900px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .mo-2-page-title-highscores {
-            font-size: 36px;
-            color: #333;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .scores-container {
-            margin-top: 40px;
-        }
-
-        .game-scores {
-            background-color: #f9f9f9;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .game-scores h2 {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        
-
-        .game-scores ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .game-scores ul li {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <?php include 'header.php'; ?>
+<section class="mo-3-highscores-section">
+    <h2>Mijn Highscores</h2>
+    <div class="mo-4-game-scores">
+        <h3>Mijn highscores</h3>
+        <ul class="mo-5-scores-list">
+            <?php if (!empty($highscores)) : ?>
+                <?php foreach ($highscores as $highscore) : ?>
+                    <li><?php echo $highscore['highscore']; ?></li>
+                <?php endforeach; ?>
+            <?php else : ?>
+                <li>Geen highscores gevonden.</li>
+            <?php endif; ?>
+        </ul>
+    </div>
+</section>
 
-    <main class="mo-1-main-container-highscores">
-        <h1 class="mo-2-page-title-highscores">Mijn Highscores</h1>
-
-        <div class="scores-container">
-            <?php foreach ($scores as $game_id => $game_scores): ?>
-                <div class="game-scores">
-                    <h2><?php echo htmlspecialchars($games[$game_id]); ?></h2>
-                    <ul>
-                        <?php
-                        // Limit to top 5 scores per game
-                        $top_scores = array_slice($game_scores, 0, 5);
-                        foreach ($top_scores as $score): ?>
-                            <li>Highscore: <?php echo htmlspecialchars($score['highscore']); ?> - Datum: <?php echo htmlspecialchars($score['timestamp']); ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </main>
-
-    <?php include 'footer.php'; ?>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="js/app.js"></script>
 </body>
 </html>
