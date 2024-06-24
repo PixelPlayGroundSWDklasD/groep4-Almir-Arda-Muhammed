@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+ 
+
 include 'lib/connection.php';
 
 $errorMessage = '';
@@ -72,6 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <?php include 'header.php'; ?>
+     
 
     <section class="home">
         <div class="home-text">
