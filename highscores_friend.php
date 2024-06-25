@@ -1,11 +1,8 @@
 <?php
 include 'lib/connection.php';
 
-// Placeholder voor sessie start
-// session_start();
 
-// Simulatie van ingelogde gebruiker (vervang dit door daadwerkelijke sessiecontrole)
-$user_id = 1; // Vervang dit door $_SESSION['user_id'] wanneer sessie actief is
+$user_id = 1; 
 
 $sql = "SELECT highscore
         FROM Highscores

@@ -1,32 +1,31 @@
 <?php
 session_start();
 
-// Controleer of de gebruiker is ingelogd
+
 if (!isset($_SESSION['user_id'])) {
-    // Niet ingelogd, stuur door naar inlogpagina
-    header("Location: login.html");
-    exit();
+    
+
 }
 
-// Inclusie van de databaseverbinding
+
 include 'lib/connection.php'; 
 
-// Query om badges op te halen
+
 $sql = "SELECT * FROM badges";
 $result = mysqli_query($conn, $sql);
 
-// Controleer of er resultaten zijn
+
 if (mysqli_num_rows($result) > 0) {
-    // Initialiseer een array voor badges
+    
     $badges = array();
 
-    // Vul de array met resultaten van de query
+    
     while ($row = mysqli_fetch_assoc($result)) {
         $badges[] = $row;
     }
 } else {
-    // Geen badges gevonden in de database
-    $badges = array(); // Lege array om fouten te voorkomen bij foreach-loop
+    
+    $badges = array(); 
 }
 ?>
 
@@ -52,7 +51,7 @@ if (mysqli_num_rows($result) > 0) {
     <main id="mo-profile-main-container">
         <h1 id="mo-profile-page-title">Mijn Profiel</h1>
 
-        
+    
         <?php include 'highscores.php'; ?>
 
         
@@ -106,10 +105,18 @@ if (mysqli_num_rows($result) > 0) {
             </ul>
         </section>
     </main>
+    <a href="logout.php" class="btn-3">Logout</a>
+ 
     
     <?php include 'add_badges.php'; ?>
     <?php include 'friends.php'; ?>
     <?php include 'footer.php'; ?>
+    
+    <?php include 'friends.php'; ?>
+        <a href="logout.php" class="btn-3">Logout</a>
+        
+
+
 </body>
 
 </html>
