@@ -1062,3 +1062,14 @@ color: #fff;
     font-size: 15px;
 
 }
+
+
+.player {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.player-name, .player-country, .player-club, .player-position {
+    margin: 5px 0;
+}
