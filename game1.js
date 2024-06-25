@@ -84,74 +84,76 @@ const flags = [
 
 
 let currentFlagIndex = 0;
-let highScore = 0;
+        let highScore = parseInt(localStorage.getItem('highScore')) || 0;
 
-function shuffleFlags(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
-function startGame() {
-    shuffleFlags(flags);
-    currentFlagIndex = 0;
-    highScore = 0;
-    updateHighScore();
-    showFlag();
-}
-
-function showFlag() {
-    const flagElement = document.getElementById('current-flag');
-    flagElement.src = flags[currentFlagIndex].flagSrc;
-}
-
-function checkGuess() {
-    const userGuess = document.getElementById('country-guess').value.trim().toLowerCase();
-    const correctCountry = flags[currentFlagIndex].country.toLowerCase();
-
-    if (userGuess === correctCountry) {
-        document.getElementById('guess-result').textContent = "Correct!";
-        highScore++;
-        updateHighScore();
-        setTimeout(nextFlag, 1000);
-    } else {
-        document.getElementById('guess-result').textContent = `Game Over. Your high score is ${highScore}.`;
-    }
-}
-
-function updateHighScore() {
-    document.getElementById('high-score-display').textContent = highScore;
-}
-
-function nextFlag() {
-    currentFlagIndex++;
-    if (currentFlagIndex >= flags.length) {
-        currentFlagIndex = 0;
-    }
-    document.getElementById('country-guess').value = "";
-    document.getElementById('guess-result').textContent = "";
-    showFlag();
-}
-
-function restartGame() {
-    startGame();
-}
-
-function handleKeyDown(event) {
-    if (event.key === "Enter") {
-        checkGuess();
-    }
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    startGame();
-
-    document.getElementById('check-button').addEventListener('click', checkGuess);
-    document.getElementById('restart-button').addEventListener('click', restartGame);
-    document.getElementById('country-guess').addEventListener('keydown', function(event) {
-        if (event.key === "Enter") {
-            checkGuess();
+        function shuffleFlags(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
         }
-    });
-});
+
+        function startGame() {
+            shuffleFlags(flags);
+            currentFlagIndex = 0;
+            updateHighScore();
+            showFlag();
+        }
+
+        function showFlag() {
+            const flagElement = document.getElementById('current-flag');
+            flagElement.src = flags[currentFlagIndex].flagSrc;
+        }
+
+        function checkGuess() {
+            const userGuess = document.getElementById('country-guess').value.trim().toLowerCase();
+            const correctCountry = flags[currentFlagIndex].country.toLowerCase();
+
+            if (userGuess === correctCountry) {
+                document.getElementById('guess-result').textContent = "Correct!";
+                highScore++;
+                updateHighScore();
+                localStorage.setItem('highScore', highScore);
+                setTimeout(nextFlag, 1000);
+            } else {
+                document.getElementById('guess-result').textContent = `Game Over. Your high score is ${highScore}.`;
+            }
+        }
+
+        function updateHighScore() {
+            document.getElementById('high-score-display').textContent = highScore;
+        }
+
+        function nextFlag() {
+            currentFlagIndex++;
+            if (currentFlagIndex >= flags.length) {
+                currentFlagIndex = 0;
+            }
+            document.getElementById('country-guess').value = "";
+            document.getElementById('guess-result').textContent = "";
+            showFlag();
+        }
+
+        function restartGame() {
+            highScore = 0;
+            localStorage.setItem('highScore', highScore);
+            startGame();
+        }
+
+        function handleKeyDown(event) {
+            if (event.key === "Enter") {
+                checkGuess();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            startGame();
+
+            document.getElementById('check-button').addEventListener('click', checkGuess);
+            document.getElementById('restart-button').addEventListener('click', restartGame);
+            document.getElementById('country-guess').addEventListener('keydown', function(event) {
+                if (event.key === "Enter") {
+                    checkGuess();
+                }
+            });
+        });
