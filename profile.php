@@ -111,6 +111,12 @@ if (mysqli_num_rows($result) > 0) {
     <?php include 'add_badges.php'; ?>
     <?php include 'friends.php'; ?>
     <?php include 'footer.php'; ?>
+    
+    <?php include 'friends.php'; ?>
+        <a href="logout.php" class="btn-3">Logout</a>
+        
+
+
 </body>
 
 </html>

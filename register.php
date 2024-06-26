@@ -9,21 +9,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $geheimevraag = $_POST['geheimevraag'];
     $antw_vraag = $_POST['antw_vraag'];
 
-    // Voorbereide SQL-query om de gebruiker in te voegen
+    
     $sql = "INSERT INTO gebruikerss (Id, gebruikers, wachtwoord, geheimevraag, antw_vraag) VALUES (NULL, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($conn, $sql);
     if ($stmt === false) {
         die("Fout bij voorbereiden van de query: " . mysqli_error($conn));
     }
 
-    // Bind parameters aan de prepared statement
+    
     mysqli_stmt_bind_param($stmt, "ssss", $username, $password, $geheimevraag, $antw_vraag);
 
-    // Voer de statement uit
+    
     if (!mysqli_stmt_execute($stmt)) {
         $errorMessage = "Fout bij uitvoeren van de query: " . mysqli_stmt_error($stmt);
     } else {
-        // Sla de gebruikersnaam op in de sessie
+        
         session_start();
         $_SESSION['username'] = $username;
         header("Location: login.php");
@@ -37,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Almir Maksuti">
     <title>Nova Gaming - Registreren</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">

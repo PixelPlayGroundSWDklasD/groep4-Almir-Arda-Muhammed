@@ -60,10 +60,12 @@ const originalPlayers = [
 ];
 
 let players = [...originalPlayers];
-let highScore = 0;
+let highScore = localStorage.getItem('highScore') ? parseInt(localStorage.getItem('highScore')) : 0;
 let currentRandomIndex = -1;
 let attempts = 0;
 let currentScore = 0;
+
+document.getElementById("highScore").textContent = highScore;
 
 function pickRandomPlayer() {
     let newIndex;
@@ -111,6 +113,7 @@ function checkGuess() {
 
         if (currentScore > highScore) {
             highScore = currentScore;
+            localStorage.setItem('highScore', highScore);
             document.getElementById("highScore").textContent = highScore;
         }
 
@@ -156,3 +159,13 @@ document.getElementById("guessInput").addEventListener("keydown", function(event
         checkGuess();
     }
 });
+
+function displayPlayer(player) {
+    const template = document.getElementById('playerTemplate').content.cloneNode(true);
+    template.querySelector('.player-name').textContent = player.name;
+    template.querySelector('.player-country').textContent = `Country: ${player.country}`;
+    template.querySelector('.player-club').textContent = `Club: ${player.club}`;
+    template.querySelector('.player-position').textContent = `Position: ${player.position}`;
+    document.body.appendChild(template);
+}
+
