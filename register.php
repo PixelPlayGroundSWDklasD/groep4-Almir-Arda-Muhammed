@@ -9,21 +9,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $geheimevraag = $_POST['geheimevraag'];
     $antw_vraag = $_POST['antw_vraag'];
 
-    
     $sql = "INSERT INTO gebruikerss (Id, gebruikers, wachtwoord, geheimevraag, antw_vraag) VALUES (NULL, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($conn, $sql);
     if ($stmt === false) {
         die("Fout bij voorbereiden van de query: " . mysqli_error($conn));
     }
 
-    
     mysqli_stmt_bind_param($stmt, "ssss", $username, $password, $geheimevraag, $antw_vraag);
 
-    
     if (!mysqli_stmt_execute($stmt)) {
         $errorMessage = "Fout bij uitvoeren van de query: " . mysqli_stmt_error($stmt);
     } else {
-        
         session_start();
         $_SESSION['username'] = $username;
         header("Location: login.php");
@@ -42,6 +38,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <script>
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById('ww');
+            var passwordFieldConf = document.getElementById('ww-h');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                passwordFieldConf.type = 'text';
+            } else {
+                passwordField.type = 'password';
+                passwordFieldConf.type = 'password';
+            }
+        }
+    </script>
 </head>
 <body>
     <?php include 'header.php'; ?>
@@ -74,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <i class="ri-question-answer-line"></i>
                 </div>
                 <div>
-                    <input type="checkbox" id="toggle-password">
+                    <input type="checkbox" id="toggle-password" onclick="togglePasswordVisibility()">
                     <label for="toggle-password">Wachtwoord tonen</label>
                 </div>
                 <div>

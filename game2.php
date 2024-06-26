@@ -8,9 +8,16 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <style>
-.playertemplate{
+.player-country{
     display: hidden;
 }
+.player-club{
+    display: hidden;
+}
+.player-position{
+    display: hidden;
+}
+
 </style>
 <body class="game2body">
     <?php include 'header.php'; ?>

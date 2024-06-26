@@ -137,8 +137,9 @@ function checkGuess() {
                 hintMessage = `Incorrect guess. Here's another hint: The first letter of the player's last name is ${currentPlayer.name.split(" ")[1][0].toUpperCase()}.`;
                 break;
             case 4:
-                hintMessage = `Sorry, you've used all your attempts. The correct answer is ${currentPlayer.name}.`;
+                hintMessage = `Sorry, you've used all your attempts. The correct answer is ${currentPlayer.name}. `;
                 currentScore = 0;
+                displayPlayer(currentPlayer);
                 document.getElementById("currentScore").textContent = currentScore;
                 break;
         }
@@ -168,4 +169,5 @@ function displayPlayer(player) {
     template.querySelector('.player-position').textContent = `Position: ${player.position}`;
     document.body.appendChild(template);
 }
+
 
