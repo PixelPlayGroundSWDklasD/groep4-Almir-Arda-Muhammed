@@ -1,11 +1,11 @@
 <?php
-include 'lib/connection.php'; // Inclusief de databaseverbinding
+include 'lib/connection.php';
 
-// Controleer of een vriend-ID is opgegeven in de URL
+
 if (isset($_GET['id'])) {
     $friend_id = $_GET['id'];
 
-    // Query om vriendgegevens op te halen
+   
     $sql_friend = "SELECT * FROM gebruikerss WHERE id = ?";
     $stmt_friend = mysqli_prepare($conn, $sql_friend);
     mysqli_stmt_bind_param($stmt_friend, "i", $friend_id);
@@ -13,34 +13,34 @@ if (isset($_GET['id'])) {
     $result_friend = mysqli_stmt_get_result($stmt_friend);
 
     if ($row_friend = mysqli_fetch_assoc($result_friend)) {
-        // Vriendgegevens gevonden, toon ze op de pagina
+        
         $friend_name = htmlspecialchars($row_friend['gebruikers']);
     } else {
-        // Vriend niet gevonden, geef een foutmelding of redirect terug naar vriendenlijstpagina
+        
         echo "Vriend niet gevonden.";
-        exit(); // Of redirect naar vriendenlijstpagina
+        exit(); 
     }
 
     mysqli_stmt_close($stmt_friend);
 } else {
-    // Geen vriend-ID opgegeven, redirect terug naar vriendenlijstpagina of geef een foutmelding
+   
     echo "Geen vriend-ID opgegeven.";
-    exit(); // Of redirect naar vriendenlijstpagina
+    exit();
 }
 
-// Query om badges van de vriend op te halen
+
 $sql_badges = "SELECT b.* FROM badges b JOIN badges ub ON b.id = ub.badge_condition WHERE ub.naam = ?";
 $stmt_badges = mysqli_prepare($conn, $sql_badges);
 mysqli_stmt_bind_param($stmt_badges, "i", $friend_id);
 mysqli_stmt_execute($stmt_badges);
 $result_badges = mysqli_stmt_get_result($stmt_badges);
 
-// Array om badges op te slaan
+
 $badges = [];
 
-// Controleer of er badges zijn gevonden
+
 if (mysqli_num_rows($result_badges) > 0) {
-    // Haal de badges op en sla ze op in de array
+    
     while ($row_badge = mysqli_fetch_assoc($result_badges)) {
         $badges[] = $row_badge;
     }
