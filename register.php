@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $geheimevraag = $_POST['geheimevraag'];
     $antw_vraag = $_POST['antw_vraag'];
 
-    /
+    
     $sql = "INSERT INTO gebruikerss (Id, gebruikers, wachtwoord, geheimevraag, antw_vraag) VALUES (NULL, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($conn, $sql);
     if ($stmt === false) {
@@ -130,31 +130,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </table>
                 </form>
             <?php endif; ?>
-                <div class="input-box">
-                    <input type="password" placeholder="Wachtwoord" name="wachtwoord" id="ww" required>
-                    <i class='bx bxs-lock-alt'></i>
-                </div>
-                <div class="input-box">
-                    <input type="password" placeholder="Wachtwoord herhalen" name="wachtwoord_conf" id="ww-h" required>
-                    <i class='bx bxs-lock-alt'></i>
-                </div>
-                <div class="input-box">
-                    <input type="text" placeholder="Geheime vraag" name="geheimevraag" required>
-                    <i class="ri-questionnaire-line"></i>
-                </div>
-                <div class="input-box">
-                    <input type="text" placeholder="Antwoord vraag" name="antw_vraag" required>
-                    <i class="ri-question-answer-line"></i>
-                </div>
-                <div>
-                    <input type="checkbox" id="toggle-password">
-                    <label for="toggle-password">Wachtwoord tonen</label>
-                </div>
-                <div>
-                    <input type="submit" value="Registreren" name="verzenden" class="btn">
-                </div>
-            </form>
-        </div>
     </main>
     <?php include 'footer.php'; ?>
     <script src="https://unpkg.com/scrollreveal"></script>

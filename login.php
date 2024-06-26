@@ -1,4 +1,3 @@
-@ -1,85 +1,81 @@
 <?php include 'lib/connection.php';?>
 <html lang="nl">
 
@@ -64,10 +63,10 @@ include 'lib/connection.php';
 session_start(); 
 $errorMessage = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') 
     $userid = $_POST['userid'];
     $wachtwoord = $_POST['wachtwoord'];
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
     $username = $_POST['userid'];
     $password = $_POST['wachtwoord'];
 
@@ -110,46 +109,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
-</head>
-<body>
-    <?php include 'header.php'; ?>
-
-    <div class="wrapper">
-        <form action="login.php" method="POST">
-            <h1>Login</h1>
-            <?php if (!empty($errorMessage)) : ?>
-                <p><?php echo $errorMessage; ?></p>
-            <?php endif; ?>
-            <div class="input-box">
-                <input type="text" placeholder="Username" id="userid" name="userid" required><br>
-                <i class='bx bxs-user'></i>
-            </div>
-            <div class="input-box">
-                <input type="password" placeholder="Password" id="wachtwoord" name="wachtwoord" required><br>
-                <i class='bx bxs-lock-alt' ></i>
-            </div>
-            <div class="remember-forgot">
-                <label><input type="checkbox">Remember Me</label>
-                <a href="#">Forgot Password</a>
-            </div>
-            <button type="submit" class="btn">Login</button>
-            <div class="register-link">
-                <p>Dont have an account? <a href="register.php">Register</a></p>
-            </div>
-        </form>
-    </div>
-
-?>
-    <?php include 'footer.php'; ?>
-</body>
-</html>
