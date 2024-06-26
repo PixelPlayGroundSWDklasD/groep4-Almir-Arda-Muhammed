@@ -1,31 +1,20 @@
 <?php
 session_start();
 
-
 if (!isset($_SESSION['user_id'])) {
-    
-
+    header('Location: login.php');
+    exit;
 }
 
-
-include 'lib/connection.php'; 
-
+include 'lib/connection.php';
 
 $sql = "SELECT * FROM badges";
 $result = mysqli_query($conn, $sql);
 
-
 if (mysqli_num_rows($result) > 0) {
-    
-    $badges = array();
-
-    
-    while ($row = mysqli_fetch_assoc($result)) {
-        $badges[] = $row;
-    }
+    $badges = mysqli_fetch_all($result, MYSQLI_ASSOC);
 } else {
-    
-    $badges = array(); 
+    $badges = [];
 }
 ?>
 
@@ -48,13 +37,12 @@ if (mysqli_num_rows($result) > 0) {
 </head>
 <body>
     <?php include 'header.php'; ?>
+
     <main id="mo-profile-main-container">
         <h1 id="mo-profile-page-title">Mijn Profiel</h1>
 
-    
         <?php include 'highscores.php'; ?>
 
-        
         <section id="mo-profile-change-password-section">
             <h2>Wachtwoord Wijzigen</h2>
             <form action="change_password.php" method="post">
@@ -71,7 +59,6 @@ if (mysqli_num_rows($result) > 0) {
             </form>
         </section>
 
-        
         <section id="mo-profile-change-username-section">
             <h2>Gebruikersnaam Wijzigen</h2>
             <form action="change_username.php" method="post">
@@ -85,7 +72,6 @@ if (mysqli_num_rows($result) > 0) {
             </form>
         </section>
 
-        
         <section id="mo-profile-badges-section">
             <h2>Badges</h2>
             <ul class="mo-profile-badges-list">
@@ -105,18 +91,11 @@ if (mysqli_num_rows($result) > 0) {
             </ul>
         </section>
     </main>
+
     <a href="logout.php" class="btn-3">Logout</a>
- 
-    
+
     <?php include 'add_badges.php'; ?>
     <?php include 'friends.php'; ?>
     <?php include 'footer.php'; ?>
-    
-    <?php include 'friends.php'; ?>
-        <a href="logout.php" class="btn-3">Logout</a>
-        
-
-
 </body>
-
 </html>

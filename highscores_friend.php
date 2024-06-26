@@ -1,7 +1,6 @@
 <?php
 include 'lib/connection.php';
 
-
 $user_id = 1; 
 
 $sql = "SELECT highscore
@@ -19,7 +18,6 @@ if (mysqli_num_rows($result) > 0) {
 }
 ?>
 <!DOCTYPE html>
-
 <html lang="nl">
 <head>
     <meta charset="utf-8">
@@ -37,20 +35,20 @@ if (mysqli_num_rows($result) > 0) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-<section class="mo-highscores_friend-section">
-    <h2 class="mo-highscores_friend-title">Highscores</h2>
-    <div class="mo-highscores_friend-game-scores">
-        <h3 class="mo-highscores_friend-subtitle">highscores</h3>
-        <ul class="mo-highscores_friend-scores-list">
-            <?php if (!empty($highscores)) : ?>
-                <?php foreach ($highscores as $highscore) : ?>
-                    <li class="mo-highscores_friend-score-item"><?php echo $highscore['highscore']; ?></li>
-                <?php endforeach; ?>
-            <?php else : ?>
-                <li class="mo-highscores_friend-no-score">Geen highscores gevonden.</li>
-            <?php endif; ?>
-        </ul>
-    </div>
-</section>
+    <section class="mo-highscores_friend-section">
+        <h2 class="mo-highscores_friend-title">Highscores</h2>
+        <div class="mo-highscores_friend-game-scores">
+            <h3 class="mo-highscores_friend-subtitle">highscores</h3>
+            <ul class="mo-highscores_friend-scores-list">
+                <?php if (!empty($highscores)) : ?>
+                    <?php foreach ($highscores as $highscore) : ?>
+                        <li class="mo-highscores_friend-score-item"><?php echo $highscore['highscore']; ?></li>
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <li class="mo-highscores_friend-no-score">Geen highscores gevonden.</li>
+                <?php endif; ?>
+            </ul>
+        </div>
+    </section>
 </body>
 </html>
