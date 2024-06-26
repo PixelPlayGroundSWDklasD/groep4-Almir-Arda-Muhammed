@@ -1,10 +1,8 @@
 <?php
-include 'lib/connection.php'; // Inclusief de databaseverbinding
+include 'lib/connection.php'; 
 
-// Simulatie van ingelogde gebruiker (vervang dit door daadwerkelijke sessiecontrole)
-$user_id = 1; // Vervang dit door $_SESSION['user_id'] wanneer sessie actief is
+$user_id = 1;
 
-// Functie om vrienden op te halen
 function getFriends($conn, $user_id) {
     $sql = "SELECT u.gebruikers, u.id
             FROM gebruikerss AS u
@@ -20,7 +18,7 @@ function getFriends($conn, $user_id) {
     }
 }
 
-// Haal de vrienden op van de ingelogde gebruiker
+
 $friends = getFriends($conn, $user_id);
 ?>
 
